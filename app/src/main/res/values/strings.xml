@@ -7,4 +7,9 @@
     <string name="myCard">My Card</string>
     <string name="uploadCard">Upload Card</string>
     <string name="edit">Edit</string>
+    <string name="slogan">Business card on demand</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="company">Luotone</string>
+    <string name="app_logo"></string>
 </resources>
