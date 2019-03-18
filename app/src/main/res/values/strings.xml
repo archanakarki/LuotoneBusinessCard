@@ -11,5 +11,10 @@
     <string name="login">Login</string>
     <string name="sign_up">Sign up</string>
     <string name="company">Luotone</string>
-    <string name="app_logo"></string>
+    <string name="app_logo" />
+    <string name="user_icon" />
+    <string name="password_icon" />
+    <string name="forgot_password">Forgot password?</string>
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
 </resources>
