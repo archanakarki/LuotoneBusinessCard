@@ -12,4 +12,5 @@
     <string name="sign_up">Sign up</string>
     <string name="company">Luotone</string>
     <string name="app_logo"></string>
+    <string name="sendMyCard">Send my card</string>
 </resources>
