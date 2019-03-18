@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/profileToolbaricon"
+        android:icon="@drawable/icons8_user_male_circle_filled_25px"
+        app:showAsAction="ifRoom"
+        android:title="profileicon"
+        />
+
+</menu>
