@@ -17,4 +17,6 @@
     <string name="forgot_password">Forgot password?</string>
     <string name="login_username">Username</string>
     <string name="login_password">Password</string>
+    <string name="sendMyCard">Send my card</string>
+
 </resources>
