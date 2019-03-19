@@ -42,7 +42,7 @@ public class ProfileScreen extends AppCompatActivity {
         companyText = (EditText) findViewById(R.id.companyID);
         textInputEditEmail = findViewById(R.id.EmailID);
         Toolbar toolbar = findViewById(R.id.profileToolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar); //removed by Aku, this was causing app to crash onload
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
 
@@ -55,6 +55,7 @@ public class ProfileScreen extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
         });
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
