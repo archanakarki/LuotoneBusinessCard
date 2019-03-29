@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background_image"
+    tools:context=".ProfileScreen">
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/profileIdSection"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/profileToolbar"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_height="@dimen/_35sdp"
+            android:gravity="start"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:itemIconTint="@drawable/nav_item_color_state"
+            app:itemTextColor="@color/colorWhite"
+            android:elevation="0dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            >
+
+            <!--<ImageButton
+                android:id="@+id/searchImageButton"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/icons8_left_round_32px" />-->
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.v7.widget.LinearLayoutCompat>
+    <!-- profile info section: includes imageview and 3 editext fields -->
+    <RelativeLayout
+        android:id="@+id/profilePicture"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_158sdp"
+        android:gravity="center"
+        android:paddingBottom="0dp"
+        android:layout_below="@+id/profileIdSection"
+        android:paddingTop="0dp">
+
+        <RelativeLayout
+            android:id="@+id/profile"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/profilecircle_border">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_margin="@dimen/_2sdp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/profile_circle"
+                android:scaleType="centerInside"/>
+
+        </RelativeLayout>
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/cameraButton"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBottom="@+id/profile"
+            android:background="@drawable/profilecircle_border"
+            android:src="@drawable/icons8_camera_24px"
+            android:adjustViewBounds="true"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/profileName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_below="@+id/profile"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="Name"
+            android:textSize="@dimen/_15sdp"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/titleName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_below="@+id/profileName"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="0dp"
+            android:text="Title"
+            android:textSize="@dimen/_10sdp"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_below="@+id/titleName"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="0dp"
+            android:text="Company name"
+            android:textSize="@dimen/_10sdp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/profileInfo"
+        android:layout_above="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:layout_below="@+id/profilePicture">
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_165sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/icons8_ms_outlook_logo_48px"/>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_15sdp"
+                        android:text="Email:"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/EmailID"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/colorWhite"
+                        android:text="email@hotmail.com"
+                        />
+
+                </android.support.v7.widget.LinearLayoutCompat>
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/icons8_phone_25px"/>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_15sdp"
+                        android:text="Phone"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/phoneID"
+                        android:layout_width="match_parent"
+                        android:inputType="phone"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:textColor="@color/colorWhite"
+                        android:text="+358 ********"/>
+                </android.support.v7.widget.LinearLayoutCompat>
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/icons8_company_48px"/>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_15sdp"
+                        android:text="Company"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/companyID"
+                        android:layout_width="match_parent"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:textColor="@color/colorWhite"
+                        android:text="Some Firm"/>
+                </android.support.v7.widget.LinearLayoutCompat>
+            </android.support.v7.widget.LinearLayoutCompat>
+
+        </android.support.v7.widget.LinearLayoutCompat>
+    </RelativeLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_alignParentBottom="true"
+        app:itemIconTint="@drawable/nav_item_color_state"
+        app:itemTextColor="@color/colorWhite"
+        app:menu="@menu/bottom_navigation"/>
+</RelativeLayout>
