@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".BussinesCards_Screen">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:fitsSystemWindows="true"
+        android:background="@color/colorBlue"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar_contacts">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                app:layout_collapseMode="pin"
+                android:background="@color/colorBlack"
+                app:popupTheme="@style/AppTheme.NoActionBar" >
+                <ImageButton
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorBlack"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/icons8_left_round_32px"/>
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_bussines_cards__screen" />
+
+    <SearchView
+        android:id="@+id/search_textField"
+        android:layout_width="@dimen/_205sdp"
+        android:layout_height="@dimen/_22sdp"
+        android:layout_margin="@dimen/fab_margin"
+        android:background="@drawable/custom_textview"
+        android:inputType="text"
+        android:gravity="center"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|start" />
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/SortOptionsSpinner"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_22sdp"
+        android:gravity="center"
+        android:background="@color/solidCircle"
+        android:visibility="visible"
+        android:spinnerMode="dropdown"
+        android:backgroundTint="@color/colorBlack"
+        android:popupBackground="@color/colorWhite"
+        android:layout_marginTop="@dimen/_30sdp"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"/>
+
+</android.support.design.widget.CoordinatorLayout>

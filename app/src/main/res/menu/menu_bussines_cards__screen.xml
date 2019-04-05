@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.luotonebc.luotonecard.BussinesCards_Screen">
+    <item
+        android:id="@+id/contacts_to_profile"
+        android:icon="@drawable/icons8_user_male_circle_filled_25px"
+        app:showAsAction="ifRoom"
+        android:title="profileicon"
+        />
+</menu>

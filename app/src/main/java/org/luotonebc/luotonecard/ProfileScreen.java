@@ -26,6 +26,8 @@ public class ProfileScreen extends AppCompatActivity {
     private EditText companyText;
     private ImageView imageView;
     private TextInputEditText textInputEditEmail;
+    private TextInputEditText textInputEditPhone;
+    private ImageButton imageButton_back;
     public static final String emailText_value = "email";
     private static final String phoneText_value = "phone";
     private static final String companyText_value = "company";
@@ -41,10 +43,21 @@ public class ProfileScreen extends AppCompatActivity {
         phoneText = (EditText) findViewById(R.id.phoneID);
         companyText = (EditText) findViewById(R.id.companyID);
         textInputEditEmail = findViewById(R.id.EmailID);
+        textInputEditPhone = findViewById(R.id.phoneID);
+        imageButton_back = findViewById(R.id.searchImageButton);
+
         Toolbar toolbar = findViewById(R.id.profileToolbar);
-        //setSupportActionBar(toolbar); //removed by Aku, this was causing app to crash onload
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+
+        imageButton_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileScreen.this,MainScreen.class);
+                startActivity(intent);
+            }
+        });
 
         ImageButton imageButton = findViewById(R.id.cameraButton);
         imageView = findViewById(R.id.profileImageView);
@@ -61,10 +74,14 @@ public class ProfileScreen extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.action_save:
+                        Boolean phoneValue = phoneNumberValidation(phoneText.getText().toString());
                         Boolean value = validateEmail();
-                        if(value == true){
+                        if(value == true && phoneValue == true){
                             save_values();
                             Toast.makeText(ProfileScreen.this, "Profile information saved", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(phoneValue==false){
+                            textInputEditPhone.setError("Invalid phone number");
                         }
                         break;
                     default:
@@ -111,7 +128,25 @@ public class ProfileScreen extends AppCompatActivity {
             return true;
         }
     }
+    public boolean phoneNumberValidation(String phoneNumber)
+    {
+        // Validation for international phone numbers per E.164 (Max. length with country calling code is 15)
+        // Leading '+' allowed, otherwise digits only
 
+        String expression = "^\\+?\\d{7,15}$";
+
+        java.util.regex.Pattern pattern = java.util.regex.Pattern.compile(expression);
+        java.util.regex.Matcher matcher = pattern.matcher(phoneNumber);
+
+        if(matcher.matches())
+        {
+            return true; // Valid phone number
+        }
+        else
+        {
+            return false; // Not a valid phone number
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -8,4 +8,5 @@
     <color name= "colorWhite">#eae8e8</color>
     <color name="solidCircle">#80FFFFFF</color>
     <color name="circleBorder">#30FFFFFF</color>
+    <color name="colorBlack">#020202</color>
 </resources>
